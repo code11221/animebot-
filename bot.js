@@ -4,6 +4,19 @@
  * Config stored in ticket_bot_config.json
  * Uses a fallback gif from Giphy that always works
  */
+
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Bot alive');
+});
+
+app.listen(3000, () => {
+  console.log('Express server ready');
+});
+
 const { Client, GatewayIntentBits, Partials, ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, PermissionsBitField } = require('discord.js');
 const fs = require('fs');
 
